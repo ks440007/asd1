@@ -19,6 +19,7 @@ class Leaf:
     def __str__(self):
         return f'{self.value} (size: {self.size})\n'
 
+    #Funkcja ustawiająca prawidłowy size dla liścia
     def calc_node(self):
         self.size = 1
         return self.size
@@ -43,6 +44,7 @@ class RegBinNode:
     def __str__(self):
         return f'{self.value} (size: {self.size})\n{indent(str(self.left))}\n{indent(str(self.right))}'
 
+    #Rekurencyjnie działająca funkcja działająca na węźle.
     def calc_node(self):
         result = 1
         if self.left:
@@ -64,6 +66,7 @@ class RegBinTree:
         # TODO: uzupełnij tę metodę (możesz deklarować dodatkowe metody tutaj, w PosBinNode lub globalnie).
         if self.root is None:
             return None
+        #Zacznij rekurencje od korzenia.
         self.root.calc_node()
         pass
 
